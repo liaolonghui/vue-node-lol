@@ -48,6 +48,9 @@
   .el-aside {
     color: #333;
   }
+  .el-submenu__title {
+    background-color: #EBCD7D;
+  }
 </style>
 
 <script>
