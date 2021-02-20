@@ -3,7 +3,6 @@
     <h1>文章列表</h1>
     <el-table :data="items" border stripe>
       <el-table-column prop="_id" label="ID"  width="250"></el-table-column>
-      <el-table-column prop="categories.name" label="所属分类"></el-table-column>
       <el-table-column prop="title" label="标题"></el-table-column>
       <el-table-column
         fixed="right"
