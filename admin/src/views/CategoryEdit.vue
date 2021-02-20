@@ -8,7 +8,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="名称">
-        <el-input v-model="model.name"></el-input>
+        <el-input v-model="model.name" required></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" native-type="submit">保存</el-button>
@@ -65,5 +65,14 @@ export default {
     this.fetchParents()
     this.id && this.fetch()
   },
+  // 防止复用的组件不刷新
+  watch: {
+    '$route': function (to){
+      // 当访问‘新建’时应该把model重置
+      if( to.path === '/categories/create' ) {
+        this.model = {}
+      }
+    }
+  }
 }
 </script>

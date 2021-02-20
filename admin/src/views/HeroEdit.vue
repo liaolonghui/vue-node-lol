@@ -3,10 +3,10 @@
     <h1>{{id ? '编辑英雄' : '新建英雄'}}</h1>
     <el-form label-width="120px" @submit.native.prevent="save">
       <el-form-item label="英雄名称" style="width: 380px;">
-        <el-input v-model="model.name"></el-input>
+        <el-input v-model="model.name" required></el-input>
       </el-form-item>
       <el-form-item label="称号" style="width: 380px;">
-        <el-input v-model="model.title"></el-input>
+        <el-input v-model="model.title" required></el-input>
       </el-form-item>
       <el-form-item label="头像">
         <el-upload
@@ -130,6 +130,15 @@ export default {
     this.fetchItems()
     this.id && this.fetch()
   },
+  // 防止复用的组件不刷新
+  watch: {
+    '$route': function (to){
+      // 当访问‘新建’时应该把model重置
+      if( to.path === '/heroes/create' ) {
+        this.model = {}
+      }
+    }
+  }
 }
 </script>
 

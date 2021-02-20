@@ -3,7 +3,7 @@
     <h1>{{id ? '编辑物品' : '新建物品'}}</h1>
     <el-form label-width="120px" @submit.native.prevent="save">
       <el-form-item label="物品名称">
-        <el-input v-model="model.name"></el-input>
+        <el-input v-model="model.name" required></el-input>
       </el-form-item>
       <el-form-item label="物品图标">
         <el-upload
@@ -68,6 +68,15 @@ export default {
   created() {
     this.id && this.fetch()
   },
+  // 防止复用的组件不刷新
+  watch: {
+    '$route': function (to){
+      // 当访问‘新建’时应该把model重置
+      if( to.path === '/items/create' ) {
+        this.model = {}
+      }
+    }
+  }
 }
 </script>
 
