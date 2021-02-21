@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Login from '../views/Login.vue'
 import Main from '../views/Main.vue'
 import Home from '../views/Home.vue'
 import CategoryEdit from '../views/CategoryEdit.vue'
@@ -18,6 +19,9 @@ import AdminUserList from '../views/AdminUserList.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  // 登录
+  { path: '/login', name: 'Login', component: Login },
+  // Main
   {
     path: '/',
     name: 'Main',
