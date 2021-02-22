@@ -1,3 +1,18 @@
-h1 {
-  color: aquamarine;
+// reset 样式重置
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+html {
+  // 为rem做准备
+  font-size: 13px;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2rem;
+  background: #f1f1f1;
+}
+a {
+  color: #999;
 }
