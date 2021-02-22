@@ -20,7 +20,7 @@ Vue.use(VueRouter)
 
 const routes = [
   // 登录
-  { path: '/login', name: 'Login', component: Login },
+  { path: '/login', name: 'Login', component: Login, meta: {isPublic: true} },   // 将login设置为可以公开访问，通过isPublic判断
   // Main
   {
     path: '/',
@@ -58,6 +58,15 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+// beforeEach  路由守卫
+router.beforeEach((to, from, next) => {
+  // 如果访问的不是公开的页面 并且没有token
+  if (!to.meta.isPublic && !localStorage.token) {
+    return next('/login')
+  }
+  next()
 })
 
 export default router
