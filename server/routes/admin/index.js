@@ -44,7 +44,7 @@ module.exports = app => {
 
   // 登录校验中间件
   const authMiddleware = require('../../middleware/auth')
-  // 引入对应资源模型
+  // 用于引入对应资源模型的中间件
   const resourceMiddleware = require('../../middleware/resource')
 
   app.use('/admin/api/rest/:resource', authMiddleware(), resourceMiddleware(), router)
