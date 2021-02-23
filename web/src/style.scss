@@ -12,6 +12,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.2rem;
   background: #f1f1f1;
+  -webkit-font-smoothing: antialiased;
 }
 a {
   color: #999;
@@ -23,9 +24,10 @@ $colors: (
   "white": #fff,
   "light": #f9f9f9,
   "grey": #999,
+  "grey-1": #666,
   "dark-1": #343440,
   "dark": #222,
-  "blank": #000,
+  "black": #000,
 );
 @each $colorKey, $color in $colors {
   .text-#{$colorKey} {
@@ -46,6 +48,7 @@ $colors: (
 // font-size      使用px to rem （快捷键：Alt+s, Alt+z）
 $base-font-size: 1rem;
 $font-sizes: (
+  xxs: 0.6154, // 8px
   xs: 0.7692,  // 10px
   sm: 0.9231,  // 12px
   md: 1,       // 13px
@@ -134,6 +137,25 @@ $spacing-sizes: (
       .#{$typeKey}#{$directionKey}-#{$sizeKey} {
         #{$type}-#{$direction}: $size * $spacing-base-size;
       }
+    }
+  }
+}
+
+// button
+.btn {
+  border: none;
+  border-radius: 0.1538rem;
+  font-size: map-get($map: $font-sizes, $key: 'sm') * $base-font-size;
+  padding: 0.3rem 0.6rem;
+}
+
+// nav
+.nav {
+  .nav-item {
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.2rem;
+    &.active {    // 当前活动页
+      border-bottom: 3px solid #fff;
     }
   }
 }
