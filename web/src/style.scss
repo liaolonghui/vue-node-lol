@@ -57,3 +57,41 @@ $font-sizes: (
     font-size: $size * $base-font-size;
   }
 }
+
+
+// flex
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+$flex-jc: (   // justify-content    主轴
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around
+);
+@each $key, $value in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+$flex-ai: (   // align-items        交叉轴
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch
+);
+@each $key, $value in $flex-ai {
+  .ai-#{$key} {
+    align-items: $value;
+  }
+}
+.flex-1 {     // grow shrink basic
+  flex: 1;    //  1 1 auto
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
