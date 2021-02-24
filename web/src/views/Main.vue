@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-100">
     <div class="topbar bg-black py-2 px-3 d-flex ai-center">
       <img src="../assets/logo.jpg" height="30">
       <div class="px-2 flex-1">
@@ -9,7 +9,7 @@
       <a href="https://lol.qq.com/download.shtml"><button type="button" class="btn bg-primary">立即下载</button></a>
     </div>
     <div class="bg-primary pt-3 pb-2">
-      <div class="nav d-flex text-white jc-around pb-1" @click="onActive($event)">
+      <div class="nav d-flex text-white jc-around" @click="onActive($event)">
         <div class="nav-item active">
           <router-link class="nav-link" tag="div" to="/">首页</router-link>
         </div>
