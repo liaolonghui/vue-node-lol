@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- swiper -->
     <!-- this.$refs.mySwiper.$swiper -->
     <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide>
@@ -16,6 +17,62 @@
       </swiper-slide>
       <div class="pagination-home text-right px-3" slot="pagination"></div>
     </swiper>
+    <!-- end of swiper -->
+    <!-- nav -->
+    <div class="nav-icons bg-white mt-3 text-center pt-4">
+      <div class="d-flex flex-wrap">
+        <a href="https://lol.qq.com/act/a20180418yxny/" class="nav-item mb-4">
+          <i class="sprite sprite-news"></i>
+          <div class="fs-sm py-2">玩家服务</div>
+        </a>
+        <a href="https://lol.qq.com/act/a20181124novel/?ADTAG=innercop.lol.web.top" class="nav-item mb-4">
+          <i class="sprite sprite-story"></i>
+          <div class="fs-sm py-2">电竞小说</div>
+        </a>
+        <a href="https://lolriotmall.qq.com/index.shtml" class="nav-item mb-4">
+          <i class="sprite sprite-market"></i>
+          <div class="fs-sm py-2">周边商城</div>
+        </a>
+        <a href="https://lol.qq.com/act/a20191210super/index.shtml" class="nav-item mb-4">
+          <i class="sprite sprite-tyf"></i>
+          <div class="fs-sm py-2">峡谷之巅</div>
+        </a>
+        <a href="https://lol.qq.com/data/info-heros.shtml" class="nav-item mb-4">
+          <i class="sprite sprite-new"></i>
+          <div class="fs-sm py-2">游戏资料</div>
+        </a>
+        <a href="https://yz.lol.qq.com/zh_CN/" class="nav-item mb-4">
+          <i class="sprite sprite-world"></i>
+          <div class="fs-sm py-2">瓦罗兰宇宙</div>
+        </a>
+        <a href="https://yz.lol.qq.com/zh_CN/champions/" class="nav-item mb-4">
+          <i class="sprite sprite-yd"></i>
+          <div class="fs-sm py-2">英雄故事</div>
+        </a>
+        <a href="https://lol.qq.com/gicp/news/423/2/1334/1.html" class="nav-item mb-4">
+          <i class="sprite sprite-vertion"></i>
+          <div class="fs-sm py-2">版本介绍</div>
+        </a>
+        <a href="https://101.qq.com/?ADTAG=cooperation.glzx.web" class="nav-item mb-4">
+          <i class="sprite sprite-battle"></i>
+          <div class="fs-sm py-2">对局环境</div>
+        </a>
+        <a href="https://bbs.lol.qq.com/forum.php" class="nav-item mb-4">
+          <i class="sprite sprite-talk"></i>
+          <div class="fs-sm py-2">官方论坛</div>
+        </a>
+        <a href="https://lol.qq.com/act/a20190507lolbdzx/index.html" class="nav-item mb-4">
+          <i class="sprite sprite-wx"></i>
+          <div class="fs-sm py-2">绑定微信</div>
+        </a>
+      </div>
+      <!-- 拉条 -->
+      <div class="bg-light py-2 fs-sm">
+        <i class="sprite sprite-arrow mr-1"></i>
+        <span>收起</span>
+      </div>
+    </div>
+    <!-- end of nav -->
   </div>
 </template>
 
@@ -52,6 +109,22 @@ export default {
     opacity: 1;
     &.swiper-pagination-bullet-active {
       background-color: map-get($map: $colors, $key: 'primary');
+    }
+  }
+}
+
+.nav-icons {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  .nav-item {
+    display: block;
+    text-decoration: none;
+    color: map-get($map: $colors, $key: 'grey-1');
+    font-weight: 550;
+    width: 25%;
+    border-right: 1px solid $border-color;
+    &:nth-child(4n) {
+      border-right: none;
     }
   }
 }

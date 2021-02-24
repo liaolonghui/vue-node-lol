@@ -2,12 +2,14 @@ $colors: (
   "primary": #db9e3f,
   "white": #fff,
   "light": #f9f9f9,
+  "light-1": #d4d9de,
   "grey": #999,
   "grey-1": #666,
   "dark-1": #343440,
   "dark": #222,
   "black": #000,
 );
+$border-color: map-get($map: $colors, $key: 'light-1');
 
 $base-font-size: 1rem;
 $font-sizes: (

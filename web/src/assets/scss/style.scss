@@ -62,6 +62,9 @@ a {
 .flex-column {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 @each $key, $value in $flex-jc {
   .jc-#{$key} {
     justify-content: $value;
@@ -126,5 +129,73 @@ a {
     &.active {    // 当前活动页
       border-bottom: 3px solid #fff;
     }
+  }
+}
+
+// sprite
+.sprite {
+  display: inline-block;
+  background: url('../images/index.png') no-repeat 0 0;
+  background-size: 28.8462rem 35rem;
+  &.sprite-news {
+    background-position: 63.546% 15.517%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-story {
+    background-position: 90.483% 15.614%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-market {
+    background-position: 36.746% 0.924%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-tyf {
+    background-position: 10.408% 15.517%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-new {
+    background-position: 89.733% 1.266%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-world {
+    background-position: 36.467% 15.287%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-yd {
+    background-position: 9.302% 0.813%;
+    width: 2.3846rem;
+    height: 1.9231rem;
+  }
+  &.sprite-vertion {
+    background-position: 46.768% 60.452%;
+    background-size: 53.8462rem 69.2308rem;
+    width: 1.8462rem;
+    height: 2rem;
+  }
+  &.sprite-battle {
+    background-position: 10.408% 15.517%;
+    width: 1.5385rem;
+    height: 1.5385rem;
+  }
+  &.sprite-talk {
+    background-position: 63.546% 15.517%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-wx {
+    background-position: 0 96.207%;
+    width: 1.8462rem;
+    height: 1.5385rem;
+  }
+  &.sprite-arrow {
+    background-position: 38.577% 52.076%;
+    width: 0.7692rem;
+    height: 0.7692rem;
   }
 }
