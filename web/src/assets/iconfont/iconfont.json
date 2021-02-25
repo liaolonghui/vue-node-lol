@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6150321",
+      "name": "news",
+      "font_class": "news",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "6175316",
+      "name": "LOL",
+      "font_class": "LOLyuanxing",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "13641183",
+      "name": "more read",
+      "font_class": "moreread",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "14990583",
+      "name": " menu",
+      "font_class": "menu",
+      "unicode": "e501",
+      "unicode_decimal": 58625
+    },
+    {
+      "icon_id": "16286188",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e543",
+      "unicode_decimal": 58691
+    }
+  ]
+}

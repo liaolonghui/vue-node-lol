@@ -73,6 +73,8 @@
       </div>
     </div>
     <!-- end of nav -->
+    <!-- news -->
+    <i class="iconfont icon-LOLyuanxing fs-xl text-primary"></i>
   </div>
 </template>
 
