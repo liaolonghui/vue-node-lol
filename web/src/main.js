@@ -15,6 +15,9 @@ Vue.use(VueAwesomeSwiper)
 // Card
 import Card from './components/Card.vue'
 Vue.component('m-card', Card)
+// ListCard
+import ListCard from './components/ListCard.vue'
+Vue.component('m-list-card', ListCard)
 
 new Vue({
   router,

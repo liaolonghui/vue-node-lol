@@ -74,41 +74,17 @@
     </div>
     <!-- end of nav-icons -->
     <!-- news -->
-    <m-card title="新闻资讯" icon="menu">  <!-- card-header -->
-      <!-- card-body-nav -->
-      <div class="nav jc-between">
-        <div class="nav-item active">
-          <div class="nav-link">热门</div>
+    <m-list-card icon="menu" title="新闻资讯" :categories="newsCats">
+      <template #items="{category}">
+        <div class="py-2" v-for="(news, i) in category.newsList" :key="i">
+          <span>[{{news.categoryName}}]</span>
+          <span>|</span>
+          <span>{{news.title}}</span>
+          <span>{{news.date}}</span>
         </div>
-        <div class="nav-item">
-          <div class="nav-link">新闻</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">公告</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">活动</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">赛事</div>
-        </div>
-      </div>
-      <!-- card-body-swiper -->
-      <div class="pt-3">
-        <swiper>
-          <swiper-slide v-for="m in 5" :key="m">
-            <div class="py-2" v-for="n in 5" :key="n">
-              <span>[新闻{{m}}]</span>
-              <span>|</span>
-              <span>牛气冲天迎初{{n}}，9款皮肤骗你钱</span>
-              <span>02/{{11+n}}</span>
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
-    </m-card>
+      </template>
+    </m-list-card>
     <m-card title="英雄列表" icon="LOLyuanxing"></m-card>
-    <m-card title="精彩视频" icon="LOLyuanxing"></m-card>
     <p>55</p>
     <p>55</p>
     <p>55</p>
@@ -131,7 +107,49 @@ export default {
           delay: 2000,
           disableOnInteraction: false
         }
-      }
+      },
+      newsCats: [
+        {
+          name: "热门",
+          newsList: new Array(5).fill(1).map(v => ({
+            categoryName: '公告'+v,
+            title: '2月21日全服不停机更新公告',
+            date: '02/21'
+          }))
+        },
+        {
+          name: "新闻",
+          newsList: new Array(5).fill(1).map(v => ({
+            categoryName: '新闻'+v,
+            title: '2月21日全服不停机更新公告',
+            date: '02/21'
+          }))
+        },
+        {
+          name: "公告",
+          newsList: new Array(5).fill(1).map(v => ({
+            categoryName: '公告'+v,
+            title: '2月21日全服不停机更新公告',
+            date: '02/21'
+          }))
+        },
+        {
+          name: "活动",
+          newsList: new Array(5).fill(1).map(v => ({
+            categoryName: '活动'+v,
+            title: '2月21日全服不停机更新公告',
+            date: '02/21'
+          }))
+        },
+        {
+          name: "赛事",
+          newsList: new Array(5).fill(1).map(v => ({
+            categoryName: '赛事'+v,
+            title: '2月21日全服不停机更新公告',
+            date: '02/21'
+          }))
+        },
+      ]
     }
   },
 }
