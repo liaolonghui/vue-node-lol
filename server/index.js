@@ -13,6 +13,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'))  // 静态资源
 require('./plugins/db')(app)
 // routes
 require('./routes/admin')(app)
+require('./routes/web')(app)
 
 app.listen(3000, ()=>{
   console.log('监听于http://localhost:3000')
