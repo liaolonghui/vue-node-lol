@@ -96,10 +96,9 @@
         </div>
       </template>
     </m-list-card>
-    <p>55</p>
-    <p>55</p>
-    <p>55</p>
-    <p>11</p>
+    <m-card class="my-3" title="精彩视频" icon="news">
+      <h2 class="text-center">无了......</h2>
+    </m-card>
   </div>
 </template>
 
