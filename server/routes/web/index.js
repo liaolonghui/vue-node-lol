@@ -6,6 +6,7 @@ module.exports = app => {
   const Article = mongoose.model('Article')
   const Hero = mongoose.model('Hero')
 
+  // 新闻列表接口
   router.get('/news/list', async (req, res) => {
     // 用populate则获取出来的数据可能会分布不均匀（有新闻，公告，活动，赛事等多个分类，如果需要每个分类都只要5条数据则有些问题）
     // const parent = await Category.findOne({
@@ -56,6 +57,7 @@ module.exports = app => {
     res.send(cats)
   })
 
+  // 英雄列表接口
   router.get('/heroes/list', async (req, res) =>{
     const heroCategory = await Category.findOne({
       name: '英雄分类'
@@ -82,6 +84,12 @@ module.exports = app => {
     })
     
     res.send(cats)
+  })
+
+  // 文章详情
+  router.get('/articles/:id', async (req, res) => {
+    const data = await Article.findById(req.params.id)
+    res.send(data)
   })
 
   app.use('/web/api', router)

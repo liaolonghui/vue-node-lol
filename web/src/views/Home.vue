@@ -77,12 +77,12 @@
     <m-list-card icon="menu" title="新闻资讯" :categories="newsCats">
       <!-- 对 对应的某一项新闻分类（如新闻，公告，活动，赛事）的数据 进行布局 -->
       <template #items="{category}">
-        <div class="py-2 fs-lg d-flex" v-for="(news, i) in category.newsList" :key="i">
+        <router-link tag="div" :to="`/article/${news._id}`" class="py-2 fs-lg d-flex" v-for="(news, i) in category.newsList" :key="i">
           <span class="text-primary">[{{news.categoryName}}]</span>
           <span class="px-1">|</span>
           <span class="flex-1 text-dark pr-2 text-ellipsis">{{news.title}}</span>
           <span class="text-grey fs-md">{{news.updatedAt | date}}</span>
-        </div>
+        </router-link>
       </template>
     </m-list-card>
     <m-list-card title="英雄列表" icon="LOLyuanxing" :categories="heroCats">
