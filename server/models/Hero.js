@@ -7,6 +7,8 @@ const schema = new mongoose.Schema({
   title: { type: String },
   // 头像
   avatar: { type: String },
+  // 英雄原画
+  banner: { type: String },
   // 分类
   categories: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Category' }],  // 数组类型，里面可有多个category对象
   // 打分
