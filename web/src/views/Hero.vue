@@ -12,8 +12,9 @@
     <!-- 具体详情 -->
     <div>{{hero.name}}</div>
   </div>
-  <div v-else>
+  <div v-else class="d-flex jc-center ai-center">
     <h2>英雄不存在</h2>
+    <router-link tag="div" to="/" class="bg-primary text-white text-center ml-3" style="width: 50px; height: 25px; line-height: 25px; border-radius: 25px;">首页</router-link>
   </div>
 </template>
 
