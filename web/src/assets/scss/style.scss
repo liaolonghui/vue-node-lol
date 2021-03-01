@@ -21,6 +21,9 @@ body {
 a {
   color: #999;
 }
+p {
+  line-height: 1.5rem;
+}
 
 // colors  有冲突的颜色加上引号（为了统一一般建议都加引号）
 @each $colorKey, $color in $colors {
@@ -214,5 +217,12 @@ a {
     background-position: 38.577% 52.076%;
     width: 0.7692rem;
     height: 0.7692rem;
+  }
+}
+
+// borders
+@each $dir in (top, right, bottom, left) {
+  .border-#{$dir} {
+    border-#{$dir}: 1px solid $border-color;
   }
 }
