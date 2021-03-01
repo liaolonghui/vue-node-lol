@@ -4,6 +4,7 @@ module.exports = app => {
   const mongoose = require('mongoose')
   const Category = mongoose.model('Category')
   const Article = mongoose.model('Article')
+  const Hero = mongoose.model('Hero')
 
   router.get('/news/list', async (req, res) => {
     // 用populate则获取出来的数据可能会分布不均匀（有新闻，公告，活动，赛事等多个分类，如果需要每个分类都只要5条数据则有些问题）
@@ -52,6 +53,34 @@ module.exports = app => {
       })
       return cat
     })
+    res.send(cats)
+  })
+
+  router.get('/heroes/list', async (req, res) =>{
+    const heroCategory = await Category.findOne({
+      name: '英雄分类'
+    })
+    // 聚合查询
+    const cats = await Category.aggregate([
+      { $match: { parent: heroCategory._id } },
+      {
+        $lookup: {
+          from: 'heros',    // 因为mongoose默认存储的集合名只加s
+          localField: '_id',
+          foreignField: 'categories',
+          as: 'heroList'
+        }
+      },
+    ])
+    // 热门
+    const subCats = cats.map(v => v._id)
+    cats.unshift({
+      name: '热门',
+      heroList: await Hero.find().where({
+        categories: { $in: subCats }
+      }).limit(10).lean()
+    })
+    
     res.send(cats)
   })
 

@@ -11,7 +11,7 @@
     <!-- card-body-swiper -->
     <div class="pt-3">
       <!-- 使用slide-change事件，改变active变量。 -->
-      <swiper ref="list" @slide-change="() => active = $refs.list.$swiper.realIndex">
+      <swiper :options="{ autoHeight: true }" ref="list" @slide-change="() => active = $refs.list.$swiper.realIndex">
         <!-- 循环遍历categories，把遍历出来的每一项category通过具名插槽传递给插入此处的元素使用 -->
         <swiper-slide v-for="(category, i) in categories" :key="i">
           <slot name="items" :category="category"></slot>

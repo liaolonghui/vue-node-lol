@@ -75,6 +75,7 @@
     <!-- end of nav-icons -->
     <!-- news -->
     <m-list-card icon="menu" title="新闻资讯" :categories="newsCats">
+      <!-- 对 对应的某一项新闻分类（如新闻，公告，活动，赛事）的数据 进行布局 -->
       <template #items="{category}">
         <div class="py-2 fs-lg d-flex" v-for="(news, i) in category.newsList" :key="i">
           <span class="text-primary">[{{news.categoryName}}]</span>
@@ -84,7 +85,17 @@
         </div>
       </template>
     </m-list-card>
-    <m-card title="英雄列表" icon="LOLyuanxing"></m-card>
+    <m-list-card title="英雄列表" icon="LOLyuanxing" :categories="heroCats">
+      <!-- 对 对应的某一项英雄分类（如战士，法师，刺客，坦克，射手，辅助）的数据 进行布局 -->
+      <template #items="{category}">
+        <div class="d-flex flex-wrap" style="margin: 0 -0.5rem;">
+          <div class="p-2 text-center" style="width: 20%" v-for="(hero, i) in category.heroList" :key="i">
+            <img :src="hero.avatar" class="w-100" />
+            <span>{{hero.name}}</span>
+          </div>
+        </div>
+      </template>
+    </m-list-card>
     <p>55</p>
     <p>55</p>
     <p>55</p>
@@ -113,7 +124,10 @@ export default {
           disableOnInteraction: false
         }
       },
-      newsCats: []
+      // 新闻分类数据
+      newsCats: [],
+      // 英雄分类数据
+      heroCats: []
     }
   },
   methods: {
@@ -121,10 +135,16 @@ export default {
     async fetchNewsCats() {
       const res = await this.$http.get('news/list')
       this.newsCats = res.data
+    },
+    // 获取heroCats
+    async fetchHeroCats() {
+      const res = await this.$http.get('heroes/list')
+      this.heroCats = res.data
     }
   },
   created() {
     this.fetchNewsCats()
+    this.fetchHeroCats()
   },
 }
 </script>
