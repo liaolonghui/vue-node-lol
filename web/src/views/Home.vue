@@ -89,10 +89,10 @@
       <!-- 对 对应的某一项英雄分类（如战士，法师，刺客，坦克，射手，辅助）的数据 进行布局 -->
       <template #items="{category}">
         <div class="d-flex flex-wrap" style="margin: 0 -0.5rem;">
-          <div class="p-2 text-center" style="width: 20%" v-for="(hero, i) in category.heroList" :key="i">
+          <router-link tag="div" :to="`/hero/${hero._id}`" class="p-2 text-center" style="width: 20%" v-for="(hero, i) in category.heroList" :key="i">
             <img :src="hero.avatar" class="w-100" />
             <span>{{hero.name}}</span>
-          </div>
+          </router-link>
         </div>
       </template>
     </m-list-card>
