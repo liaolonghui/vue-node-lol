@@ -69,6 +69,41 @@
                 </div>
               </div>
             </div>
+            <!-- 出装 -->
+            <m-card title="出装推荐" icon="menu" class="hero-items">
+              <div class="fs-xl">顺风出装</div>
+              <div class="d-flex jc-around mt-3 pb-2 border-bottom">
+                <div v-for="item in hero.items1" :key="item._id">
+                  <img :src="item.icon" class="icon">
+                  <div class="fs-xs text-center">{{item.name}}</div>
+                </div>
+              </div>
+              <div class="fs-xl mt-3">逆风出装</div>
+              <div class="d-flex jc-around mt-3">
+                <div v-for="item in hero.items2" :key="item._id">
+                  <img :src="item.icon" class="icon">
+                  <div class="fs-xs text-center">{{item.name}}</div>
+                </div>
+              </div>
+            </m-card>
+            <!-- 其他 -->
+            <m-card title="使用技巧" icon="menu">
+              <p class="m-0">{{hero.usageTips}}</p>
+            </m-card>
+            <m-card title="对线技巧" icon="menu">
+              <p class="m-0">{{hero.battleTips}}</p>
+            </m-card>
+            <m-card title="团战思路" icon="menu">
+              <p class="m-0">{{hero.teamTips}}</p>
+            </m-card>
+            <!-- 英雄关系 -->
+            <m-card title="英雄关系" icon="LOLyuanxing" class="mb-1">
+              <div class="fs-xl">最佳搭档</div>
+              <div v-for="item in hero.partners" :key="item.name" class="mt-3 d-flex">
+                <img :src="item.hero.avatar" width="50" height="50" style="border-radius: 50%;">
+                <p class="flex-1 ml-3">{{item.description}}</p>
+              </div>
+            </m-card>
           </div>
         </swiper-slide>
         <swiper-slide>
@@ -145,6 +180,14 @@ export default {
     &.active {
       border-color: map-get($map: $colors, $key: 'primary');
     }
+  }
+}
+
+.hero-items {
+  img.icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
   }
 }
 
