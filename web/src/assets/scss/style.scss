@@ -129,6 +129,15 @@ p {
   border-radius: 0.1538rem;
   font-size: map-get($map: $font-sizes, $key: 'sm') * $base-font-size;
   padding: 0.3rem 0.6rem;
+  &.btn-lg {
+    background: map-get($map: $colors, $key: 'light');
+    border: 1px solid #eee;
+    border-radius: 1rem;
+    padding: 0.45rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 // nav
