@@ -8,6 +8,7 @@ app.set('secret', 'asdfghytt5643wesdfg')
 app.use(require('cors')())  // 跨域
 app.use(express.json())  // 为了可以直接使用req.body获取到前端传来的post数据
 app.use('/admin', express.static(__dirname + '/admin'))  // admin后台管理系统
+app.use('/web', express.static(__dirname + '/web'))  // web移动端
 app.use('/uploads', express.static(__dirname + '/uploads'))  // 静态资源
 
 // database
